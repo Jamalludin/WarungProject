@@ -11,19 +11,24 @@ export default class FormLogin extends Component<Props> {
               style={styles.inputBox}
               underlineColorAndroid = 'rgba(0,0,0,0)'
               placeholder = 'Email'
-              placeholderTextColor = '#ffffff' />
+              placeholderTextColor = '#ffffff'
+              selectionColor = '#fff'
+              keyboardType = 'email-address'
+              onSubmitEditing = {() => this.password.focus} />
 
           <TextInput
               style={styles.inputBox}
               underlineColorAndroid = 'rgba(0,0,0,0)'
               placeholder = 'Password'
-              placeholderTextColor = '#ffffff' />
+              placeholderTextColor = '#ffffff'
+              secureTextEntry = {true}
+              ref = {(input) => this.password = input} />
 
           <TouchableOpacity
               style={styles.button}
               onPress={this.onPress} >
 
-              <Text style={styles.buttonText}> Login </Text>
+              <Text style={styles.buttonText}>{this.props.type}</Text>
 
           </TouchableOpacity>
 
@@ -34,7 +39,7 @@ export default class FormLogin extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },

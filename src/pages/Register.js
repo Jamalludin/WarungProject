@@ -5,10 +5,10 @@ import FormLogin from '../components/FormLogin';
 import {Actions} from 'react-native-router-flux';
 
 type Props = {};
-export default class Login extends Component<Props> {
+export default class Register extends Component<Props> {
 
-  signup(){
-    Actions.Register();
+  signin(){
+    Actions.pop();
   }
 
   render() {
@@ -19,11 +19,11 @@ export default class Login extends Component<Props> {
             barStyle="light-content"/>
 
           <Logo/>
-          <FormLogin type = 'Login'/>
+          <FormLogin type = 'Register'/>
 
         <View style={styles.signupTextConst}>
-            <Text style={styles.signupText}>Belum Punya Akun ?</Text>
-            <TouchableOpacity onPress = {this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+            <Text style={styles.signupText}>Sudah Punya Akun Ya ?</Text>
+            <TouchableOpacity onPress = {this.signin}><Text style={styles.signupButton}> Signin</Text></TouchableOpacity>
         </View>
 
       </View>
